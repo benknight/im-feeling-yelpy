@@ -11,8 +11,8 @@
 		"keyword": "biz"
 	},
 	"icons": {
-		"16": "icon.png",
-		"32": "icon.png"
+		"16": "burst-tiny-dark.png",
+		"128": "burst-lucky-green.png"
 	},
 	"manifest_version": 2
 }
