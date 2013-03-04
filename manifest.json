@@ -1,9 +1,10 @@
 {
 	"name": "I’m Feeling Yelpy",
-	"description" : "",
-	"version": "0.9",
+	"description" : "Get taken to a Yelp business page directly from the Omnibar.",
+	"version": "0.9.1",
 	"background": {
 		"scripts": [
+			"jquery-1.9.1.min.js",
 			"background.js"
 		]
 	},
@@ -14,5 +15,9 @@
 		"16": "burst-tiny-dark.png",
 		"128": "burst-lucky-green.png"
 	},
+	"permissions": [
+		"geolocation",
+		"http://*/"
+	],
 	"manifest_version": 2
 }
