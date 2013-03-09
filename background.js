@@ -20,7 +20,7 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
 		url = 'http://www.google.com/search?q=' + text + '+yelp&btnI=Im+Feeling+Lucky';
 	}
 	chrome.tabs.getSelected(null, function(tab) {
-		chrome.tabs.update(tab.id, {url: url});
+		chrome.tabs.update(tab.id, { url: url });
 	});
 });
 
@@ -32,6 +32,8 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
 	if ( suggestTimeout ) {
 		clearTimeout( suggestTimeout );
 	}
+	// assume the user's done typing after 500 seconds
+	var timeout_duration = 500;
 	suggestTimeout = setTimeout(
 		function() {
 			$.get(
@@ -43,17 +45,19 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
 					'radius': 10,
 					'limit':  5,
 					'ywsid':  ywsid
-
 				},
 				function(data) {
 					var suggestions = $.map(data.businesses, function(biz, index) {
-						return { content: biz.url, description: biz.name.replace('&', '&amp;') };
+						return {
+							content: biz.url,
+							description: biz.name.replace('&', '&amp;') + ' <url>' + biz.url + '</url>'
+						};
 					});
 					suggest( suggestions );
 				},
 				'json'
 			);
 		},
-		200
+		timeout_duration
 	);
 });

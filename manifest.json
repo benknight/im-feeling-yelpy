@@ -1,7 +1,7 @@
 {
 	"name": "I’m Feeling Yelpy",
 	"description" : "Get taken to a Yelp business page directly from the Omnibar.",
-	"version": "0.9.1",
+	"version": "0.9.2",
 	"background": {
 		"scripts": [
 			"jquery-1.9.1.min.js",
