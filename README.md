@@ -1,5 +1,7 @@
 # I’m Feeling Yelpy
 
+![Screenshot](/screenshot.png)
+
 Get taken directly to a Yelp business page from the Chrome Omnibox.  It works by running your query plus the keyword "yelp" through Google's "I'm Feeling Lucky".  The extension will also give you search suggestions, but the Yelp public API is slow you might have to wait a second.
 
 ## How to Use
